@@ -22,11 +22,13 @@ namespace TrainingPracticeWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static AuthorizationPage authorizationPage;
         public MainWindow()
         {
             InitializeComponent();
             navigation.mainWindow = this;
             MenuPage.mainWindow = this;
+            AuthorizationPage.mainWindow = this;
             navigation.NextPage(new PageComponent(new AuthorizationPage(), "Авторизация"));
             ExitBtn.Visibility = Visibility.Hidden;
         }
@@ -38,6 +40,9 @@ namespace TrainingPracticeWPF
 
         private void ExitBtn_Click(object sender, RoutedEventArgs e)
         {
+            MainNameTb.Text = "";
+            MainTitleTb.Text = "";
+            authorizationPage.a = 0;
             navigation.Clear();
             navigation.NextPage(new PageComponent(new AuthorizationPage(), "Авторизация"));
             App.person = "Guest";

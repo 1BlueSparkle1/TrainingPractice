@@ -21,41 +21,68 @@ namespace TrainingPracticeWPF.MyPages
     /// </summary>
     public partial class AuthorizationPage : Page
     {
+        public static MainWindow mainWindow;
         public AuthorizationPage()
         {
             InitializeComponent();
+            MainWindow.authorizationPage = this;
         }
 
         private void EntryGuestBtn_Click(object sender, RoutedEventArgs e)
         {
+            mainWindow.MainTitleTb.Text = "Гость";
+            mainWindow.MainNameTb.Visibility = Visibility.Collapsed;
             navigation.Clear();
             navigation.NextPage(new PageComponent(new MenuPage(), "Меню"));
         }
-
+        public int a = 0;
         private void EntryBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (LoginTb.Text == "1" && PasswordPb.Password == "1")
+            IEnumerable<Educator> educators = App.db.Educator;
+            foreach (var educator in educators)
             {
-                App.person = "Educator";
-                navigation.Clear();
-                navigation.NextPage(new PageComponent(new MenuPage(), "Меню"));
+                if (LoginTb.Text == educator.Login && PasswordPb.Password == educator.Password)
+                {
+                    a = 1;
+                    App.person = "Educator";
+                    mainWindow.MainNameTb.Text = educator.Employee.Surname;
+                    mainWindow.MainTitleTb.Text = educator.Employee.Position;
+                    navigation.Clear();
+                    navigation.NextPage(new PageComponent(new MenuPage(), "Меню"));
+                }
             }
-            else if (LoginTb.Text == "2" && PasswordPb.Password == "2")
+            IEnumerable<Engineer> engineers = App.db.Engineer;
+            foreach (var engineer in engineers)
             {
-                App.person = "Engineer";
-                navigation.Clear();
-                navigation.NextPage(new PageComponent(new MenuPage(), "Меню"));
+                if (LoginTb.Text == engineer.Login && PasswordPb.Password ==engineer.Password)
+                {
+                    a = 1;
+                    App.person = "Engineer";
+                    mainWindow.MainNameTb.Text = engineer.Employee.Surname;
+                    mainWindow.MainTitleTb.Text= engineer.Employee.Position;
+                    navigation.Clear();
+                    navigation.NextPage(new PageComponent(new MenuPage(), "Меню"));
+                }
             }
-            else if(LoginTb.Text == "3" && PasswordPb.Password == "3")
+            IEnumerable<HeadDepartment> headDepartments = App.db.HeadDepartment;
+            foreach (var headDepartment in headDepartments)
             {
-                App.person = "HeadDepartment";
-                navigation.Clear();
-                navigation.NextPage(new PageComponent(new MenuPage(), "Меню"));
+                if (LoginTb.Text == headDepartment.Login && PasswordPb.Password == headDepartment.Password)
+                {
+                    a = 1;
+                    App.person = "HeadDepartment";
+                    mainWindow.MainNameTb.Text = headDepartment.Employee.Surname;
+                    mainWindow.MainTitleTb.Text = headDepartment.Employee.Position;
+                    navigation.Clear();
+                    navigation.NextPage(new PageComponent(new MenuPage(), "Меню"));
+                }
             }
-            else
+            if (a != 1)
             {
                 MessageBox.Show("Неверный логин или пароль!");
             }
+                
+            
         }
     }
 }

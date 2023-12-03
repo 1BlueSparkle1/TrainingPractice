@@ -10,7 +10,7 @@ namespace TrainingPracticeWPF.Components
     static class navigation
     {
         public static MainWindow mainWindow;
-        private static List<PageComponent> components = new List<PageComponent>();
+        public static List<PageComponent> components = new List<PageComponent>();
         private static void Update(PageComponent pageComponent)
         {
             mainWindow.MainFrame.Navigate(pageComponent.Page);
