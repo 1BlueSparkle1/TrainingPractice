@@ -1,0 +1,44 @@
+﻿<Page x:Class="TrainingPracticeWPF.MyPages.DisciplineListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TrainingPracticeWPF.MyPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="900"
+      Title="DisciplineListPage">
+
+    <Grid>
+        <StackPanel>
+            <StackPanel HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>По объему</TextBlock>
+                        <ComboBox Name="ScopeCb" SelectionChanged="ScopeCb_SelectionChanged">
+                            <ComboBoxItem>По умолчанию</ComboBoxItem>
+                            <ComboBoxItem>По возростанию</ComboBoxItem>
+                            <ComboBoxItem>По убыванию</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>По исполнителю</TextBlock>
+                        <ComboBox Name="DepartmentCb" SelectionChanged="DepartmentCb_SelectionChanged">
+                            <ComboBoxItem>По умолчанию</ComboBoxItem>
+                            <ComboBoxItem>По возростанию</ComboBoxItem>
+                            <ComboBoxItem>По убыванию</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock>По названию</TextBlock>
+                    <TextBox Name="TextTb" TextChanged="TextTb_TextChanged"></TextBox>
+                </StackPanel>
+            </StackPanel>
+            <ScrollViewer Height="350">
+                <WrapPanel Name="DisciplineWp">
+
+                </WrapPanel>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Page>

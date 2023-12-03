@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="TrainingPracticeWPF.Components.ExamUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TrainingPracticeWPF.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="280" d:DesignWidth="500">
+    <Border BorderBrush="#FF0C809E" BorderThickness="2" Margin="10"  Width="500">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="71*"/>
+                <RowDefinition Height="93*"/>
+                <RowDefinition Height="62*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" HorizontalAlignment="Left">
+                <TextBlock HorizontalAlignment="Center" FontWeight="Bold">Дата</TextBlock>
+                <TextBlock HorizontalAlignment="Center" Name="DateTb"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Row="0" HorizontalAlignment="Center">
+                <TextBlock HorizontalAlignment="Center" FontWeight="Bold">Кабинет</TextBlock>
+                <TextBlock HorizontalAlignment="Center" Name="AudienceTb"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Row="0" HorizontalAlignment="Right">
+                <TextBlock HorizontalAlignment="Center" FontWeight="Bold">Предмет</TextBlock>
+                <TextBlock HorizontalAlignment="Center" Name="ObjectTb"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <TextBlock FontWeight="Bold">Студент:</TextBlock>
+                <TextBlock Name="StudentTb"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <TextBlock HorizontalAlignment="Right" FontWeight="Bold">Преподаватель:</TextBlock>
+                <TextBlock HorizontalAlignment="Right" Name="EducatorTb"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" >
+                <Button>Оценить</Button>
+            </StackPanel>
+            <StackPanel Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+                <TextBlock FontWeight="Bold">Оценка:</TextBlock>
+                <TextBlock Name="ScoreTb">-</TextBlock>
+            </StackPanel>
+        </Grid>
+    </Border>
+
+</UserControl>

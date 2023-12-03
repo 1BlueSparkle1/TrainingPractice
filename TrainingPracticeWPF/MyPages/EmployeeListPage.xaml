@@ -1,0 +1,55 @@
+﻿<Page x:Class="TrainingPracticeWPF.MyPages.EmployeeListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TrainingPracticeWPF.MyPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="900"
+      Title="EmployeeListPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="167*"/>
+            <RowDefinition Height="33*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" >
+            <StackPanel HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>По должности</TextBlock>
+                        <ComboBox Name="PositionCb" SelectionChanged="PositionCb_SelectionChanged">
+                            <ComboBoxItem>Все</ComboBoxItem>
+                            <ComboBoxItem>Преподаватель</ComboBoxItem>
+                            <ComboBoxItem>Зав. кафедрой</ComboBoxItem>
+                            <ComboBoxItem>Инженер</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>По зарплате</TextBlock>
+                        <ComboBox Name="SalaryCb" SelectionChanged="SalaryCb_SelectionChanged">
+                            <ComboBoxItem>По умолчанию</ComboBoxItem>
+                            <ComboBoxItem>По возростанию</ComboBoxItem>
+                            <ComboBoxItem>По убыванию</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>По фамилии</TextBlock>
+                        <TextBox Name="SurnameTb" TextChanged="SurnameTb_TextChanged"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <ScrollViewer Height="350">
+                <WrapPanel Name="EmployeeWp">
+
+                </WrapPanel>
+            </ScrollViewer>
+        </StackPanel>
+        <Button Grid.Row="1">
+            Добавить
+        </Button>
+    </Grid>
+</Page>

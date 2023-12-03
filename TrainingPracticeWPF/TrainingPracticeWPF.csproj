@@ -64,6 +64,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Components\DepartmentUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\DisciplineUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\EmployeeUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\ExamUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\FacultyUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\SpecialtyUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -84,8 +108,14 @@
     <Compile Include="Components\Department.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Components\DepartmentUserControl.xaml.cs">
+      <DependentUpon>DepartmentUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\Discipline.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Components\DisciplineUserControl.xaml.cs">
+      <DependentUpon>DisciplineUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\Educator.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -93,14 +123,23 @@
     <Compile Include="Components\Employee.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Components\EmployeeUserControl.xaml.cs">
+      <DependentUpon>EmployeeUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\Engineer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Components\Exam.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Components\ExamUserControl.xaml.cs">
+      <DependentUpon>ExamUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\Faculty.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Components\FacultyUserControl.xaml.cs">
+      <DependentUpon>FacultyUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\HeadDepartment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -124,6 +163,9 @@
     <Compile Include="Components\Specialty.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Components\SpecialtyUserControl.xaml.cs">
+      <DependentUpon>SpecialtyUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\Student.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -141,6 +183,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MyPages\DepartmentListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyPages\DisciplineListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyPages\EmployeeListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyPages\ExamListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyPages\FacultyListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MyPages\MenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -149,16 +211,38 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MyPages\SpecialtyListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MyPages\AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyPages\DepartmentListPage.xaml.cs">
+      <DependentUpon>DepartmentListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyPages\DisciplineListPage.xaml.cs">
+      <DependentUpon>DisciplineListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyPages\EmployeeListPage.xaml.cs">
+      <DependentUpon>EmployeeListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyPages\ExamListPage.xaml.cs">
+      <DependentUpon>ExamListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyPages\FacultyListPage.xaml.cs">
+      <DependentUpon>FacultyListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MyPages\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MyPages\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyPages\SpecialtyListPage.xaml.cs">
+      <DependentUpon>SpecialtyListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

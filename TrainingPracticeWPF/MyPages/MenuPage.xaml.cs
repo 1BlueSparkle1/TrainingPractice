@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TrainingPracticeWPF.Components;
 
 namespace TrainingPracticeWPF.MyPages
 {
@@ -57,6 +58,36 @@ namespace TrainingPracticeWPF.MyPages
             {
                 MessageBox.Show("Произошла ошибка!");
             }
+        }
+
+        private void ExamBtn_Click(object sender, RoutedEventArgs e)
+        {
+            navigation.NextPage(new PageComponent(new ExamListPage(), "Экзамены"));
+        }
+
+        private void EmployeeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            navigation.NextPage(new PageComponent(new EmployeeListPage(), "Сотрудники"));
+        }
+
+        private void DepartmentBtn_Click(object sender, RoutedEventArgs e)
+        {
+            navigation.NextPage(new PageComponent(new DepartmentListPage(), "Кафедры"));
+        }
+
+        private void DisciplineBtn_Click(object sender, RoutedEventArgs e)
+        {
+            navigation.NextPage(new PageComponent(new DisciplineListPage(), "Дисциплины"));
+        }
+
+        private void FacultyBtn_Click(object sender, RoutedEventArgs e)
+        {
+            navigation.NextPage(new PageComponent(new FacultyListPage(), "Факультеты"));
+        }
+
+        private void SpecialtyBtn_Click(object sender, RoutedEventArgs e)
+        {
+            navigation.NextPage(new PageComponent(new SpecialtyListPage(), "Специальности"));
         }
     }
 }
