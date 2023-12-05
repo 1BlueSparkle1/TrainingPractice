@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TrainingPracticeWPF.MyPages;
 
 namespace TrainingPracticeWPF.Components
 {
@@ -20,7 +21,7 @@ namespace TrainingPracticeWPF.Components
     /// </summary>
     public partial class ExamUserControl : UserControl
     {
-        public static Exam exam;
+        public Exam exam;
         public ExamUserControl(Exam _exam)
         {
             InitializeComponent();
@@ -31,6 +32,11 @@ namespace TrainingPracticeWPF.Components
             StudentTb.Text = exam.Student.Surname;
             EducatorTb.Text = exam.Employee.Surname;
             ScoreTb.Text = exam.Appraisal.ToString();
+        }
+
+        private void ScopeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            navigation.NextPage(new PageComponent(new ScopeExamPage(exam), "Оценивание"));
         }
     }
 }

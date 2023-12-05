@@ -191,6 +191,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MyPages\EditExamPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MyPages\EmployeeListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -211,6 +215,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MyPages\ScopeExamPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MyPages\SpecialtyListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -226,6 +234,9 @@
     <Compile Include="MyPages\DisciplineListPage.xaml.cs">
       <DependentUpon>DisciplineListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyPages\EditExamPage.xaml.cs">
+      <DependentUpon>EditExamPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MyPages\EmployeeListPage.xaml.cs">
       <DependentUpon>EmployeeListPage.xaml</DependentUpon>
     </Compile>
@@ -240,6 +251,9 @@
     </Compile>
     <Compile Include="MyPages\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyPages\ScopeExamPage.xaml.cs">
+      <DependentUpon>ScopeExamPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MyPages\SpecialtyListPage.xaml.cs">
       <DependentUpon>SpecialtyListPage.xaml</DependentUpon>

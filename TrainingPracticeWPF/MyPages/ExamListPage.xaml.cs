@@ -99,5 +99,10 @@ namespace TrainingPracticeWPF.MyPages
         {
             Refresh();
         }
+
+        private void CreateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            navigation.NextPage(new PageComponent(new EditExamPage(), "Добавление"));
+        }
     }
 }
