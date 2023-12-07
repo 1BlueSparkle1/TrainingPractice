@@ -35,6 +35,10 @@ namespace TrainingPracticeWPF.Components
         {
             components.Clear();
         }
+        public static void show(PageComponent pageComponent)
+        {
+            mainWindow.MainFrame.Navigate(pageComponent.Page);
+        }
     }
     public class PageComponent
     {

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TrainingPracticeWPF.MyPages;
 
 namespace TrainingPracticeWPF.Components
 {
@@ -20,7 +21,7 @@ namespace TrainingPracticeWPF.Components
     /// </summary>
     public partial class EmployeeUserControl : UserControl
     {
-        public static Employee employee;
+        public Employee employee;
         public EmployeeUserControl(Employee _employee)
         {
             InitializeComponent();
@@ -67,8 +68,8 @@ namespace TrainingPracticeWPF.Components
                         SeniorityTb.Text = headDepartment.Seniority.ToString();
                     }
                 }
-                
             }
+            
             else if (employee.Position == "преподаватель")
             {
                 IEnumerable<Educator> educators = App.db.Educator;
@@ -96,6 +97,56 @@ namespace TrainingPracticeWPF.Components
                 }
 
             }
+        }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            navigation.NextPage(new PageComponent(new EditEmployeePage(employee, 0), "Редактирование"));
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (employee.Position == "зав. кафедрой")
+            {
+                IEnumerable<HeadDepartment> headDepartments = App.db.HeadDepartment;
+                foreach (var headDepartment in headDepartments)
+                {
+                    if (headDepartment.TabNumberEmployee == employee.TabNumber)
+                    {
+                        App.db.HeadDepartment.Remove(headDepartment);
+
+                    }
+                }
+
+            }
+            else if (employee.Position == "преподаватель")
+            {
+                IEnumerable<Educator> educators = App.db.Educator;
+                foreach (var educator in educators)
+                {
+                    if (educator.TabNumberEmployee == employee.TabNumber)
+                    {
+                        App.db.Educator.Remove(educator);
+
+                    }
+                }
+            }
+            else if (employee.Position == "инженер")
+            {
+                IEnumerable<Engineer> engineers = App.db.Engineer;
+                foreach (var engineer in engineers)
+                {
+                    if (engineer.TabNumberEmployee == employee.TabNumber)
+                    {
+                        App.db.Engineer.Remove(engineer);
+
+                    }
+                }
+            }
+            App.db.Employee.Remove(employee);
+            App.db.SaveChanges();
+            MessageBox.Show("Сотрудник удален!");
+            navigation.show(new PageComponent(new EmployeeListPage(), "Сотрудники"));
         }
     }
 }

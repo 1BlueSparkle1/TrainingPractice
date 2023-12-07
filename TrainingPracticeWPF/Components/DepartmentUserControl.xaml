@@ -23,7 +23,7 @@
                         <TextBlock Name="FacultyTb" HorizontalAlignment="Center"></TextBlock>
                     </StackPanel>
                 </StackPanel>
-                <Button Name="EditBtn">Изменить</Button>
+                <Button Name="EditBtn" Click="EditBtn_Click">Изменить</Button>
             </StackPanel>
         </Grid>
     </Border>

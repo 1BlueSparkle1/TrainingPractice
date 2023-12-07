@@ -61,8 +61,8 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Name="EditBtn">Изменить</Button>
-                <Button Name="DeleteBtn">Удалить</Button>
+                <Button Name="EditBtn" Click="EditBtn_Click">Изменить</Button>
+                <Button Name="DeleteBtn" Click="DeleteBtn_Click">Удалить</Button>
             </StackPanel>
 
         </Grid>

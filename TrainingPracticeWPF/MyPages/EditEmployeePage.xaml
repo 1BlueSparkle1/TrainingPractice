@@ -1,0 +1,77 @@
+﻿<Page x:Class="TrainingPracticeWPF.MyPages.EditEmployeePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TrainingPracticeWPF.MyPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditEmployeePage">
+
+    <Grid Width="800" Height="400">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="193*"/>
+            <RowDefinition Height="32*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0">
+            <StackPanel VerticalAlignment="Center" Margin="10">
+                <StackPanel>
+                    <TextBlock FontWeight="Bold">Таб. номер</TextBlock>
+                    <TextBox Text="{Binding TabNumber}" Name="NumberTb"></TextBox>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock FontWeight="Bold">Кафедра</TextBlock>
+                    <TextBox Text="{Binding Department.Title}" Name="DepartmentTb"></TextBox>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock FontWeight="Bold">Фамилия</TextBlock>
+                    <TextBox Text="{Binding Surname}" Name="SurnameTb"></TextBox>
+                </StackPanel>
+                <StackPanel  Name="LoginSp">
+                    <TextBlock FontWeight="Bold">Логин</TextBlock>
+                    <TextBox Name="LoginTb"></TextBox>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" Margin="10">
+                <StackPanel>
+                    <TextBlock FontWeight="Bold">Должность</TextBlock>
+                    <TextBox Text="{Binding Position}" Name="PositionTb" TextChanged="PositionTb_TextChanged"></TextBox>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock FontWeight="Bold">Зарплата</TextBlock>
+                    <TextBox Text="{Binding Salary}" Name="SalaryTb"></TextBox>
+                </StackPanel>
+                <StackPanel  Name="ChiefSp">
+                    <TextBlock FontWeight="Bold">Шеф</TextBlock>
+                    <TextBox Text="{Binding Chief}" Name="ChiefTb"></TextBox>
+                </StackPanel>
+                <StackPanel  Name="PasswordSp">
+                    <TextBlock FontWeight="Bold">Пароль</TextBlock>
+                    <TextBox Name="PasswordTb"></TextBox>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" Margin="10">
+                <StackPanel  Name="SenioritySp">
+                    <TextBlock FontWeight="Bold">Стаж</TextBlock>
+                    <TextBox Name="SeniorityTb"></TextBox>
+                </StackPanel>
+                <StackPanel Name="SpecialtySp">
+                    <TextBlock FontWeight="Bold">Специальность</TextBlock>
+                    <TextBox Name="SpecialtyTb"></TextBox>
+                </StackPanel>
+                <StackPanel  Name="TitleSp">
+                    <TextBlock FontWeight="Bold">Звание</TextBlock>
+                    <TextBox Name="TitleTb"></TextBox>
+                </StackPanel>
+                <StackPanel  Name="DegreeSp">
+                    <TextBlock FontWeight="Bold">Степень</TextBlock>
+                    <TextBox Name="DegreeTb"></TextBox>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="SaveBtn" Width="200" Click="SaveBtn_Click" Padding="1">Сохранить</Button>
+        </StackPanel>
+
+    </Grid>
+</Page>

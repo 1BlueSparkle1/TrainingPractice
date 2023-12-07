@@ -17,31 +17,31 @@
 
         <StackPanel Grid.Row="0" HorizontalAlignment="Left">
             <TextBlock HorizontalAlignment="Center" FontWeight="Bold">Дата</TextBlock>
-            <TextBlock Text="{Binding DateExam}" HorizontalAlignment="Center" Name="DateTb"></TextBlock>
+            <TextBlock HorizontalAlignment="Center" Name="DateTb"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="0" HorizontalAlignment="Center">
             <TextBlock HorizontalAlignment="Center" FontWeight="Bold">Кабинет</TextBlock>
-            <TextBlock Text="{Binding Audience}" HorizontalAlignment="Center" Name="AudienceTb"></TextBlock>
+            <TextBlock HorizontalAlignment="Center" Name="AudienceTb"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="0" HorizontalAlignment="Right">
             <TextBlock HorizontalAlignment="Center" FontWeight="Bold">Предмет</TextBlock>
-            <TextBlock Text="{Binding Discipline.Title}" HorizontalAlignment="Center" Name="ObjectTb"></TextBlock>
+            <TextBlock HorizontalAlignment="Center" Name="ObjectTb"></TextBlock>
         </StackPanel>
 
         <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left">
             <TextBlock FontWeight="Bold">Студент:</TextBlock>
-            <ComboBox Name="StudentCb" ItemsSource="{Binding Student.Surnam}">
+            <ComboBox Name="StudentCb">
                 
             </ComboBox>
         </StackPanel>
         <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right">
             <TextBlock HorizontalAlignment="Right" FontWeight="Bold">Преподаватель:</TextBlock>
-            <TextBlock HorizontalAlignment="Right" Name="EducatorTb" Text="{Binding Employee.Surname}"></TextBlock>
+            <TextBlock HorizontalAlignment="Right" Name="EducatorTb"></TextBlock>
         </StackPanel>
 
         <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left">
             <TextBlock FontWeight="Bold">Id Экзамена:</TextBlock>
-            <ComboBox ItemsSource="{Binding Id}" Name="IdCb" SelectionChanged="IdCb_SelectionChanged">
+            <ComboBox Name="IdCb" SelectionChanged="IdCb_SelectionChanged">
 
             </ComboBox>
         </StackPanel>
@@ -50,7 +50,7 @@
         </StackPanel>
         <StackPanel Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
             <TextBlock FontWeight="Bold">Оценка:</TextBlock>
-            <TextBox Text="{Binding Appraisal}" Name="ScoreTb"></TextBox>
+            <TextBox Name="ScoreTb"></TextBox>
         </StackPanel>
     </Grid>
 </Page>

@@ -26,11 +26,10 @@ namespace TrainingPracticeWPF.MyPages
         public EditExamPage()
         {
             InitializeComponent();
-            IdCb.ItemsSource = App.db.Exam.ToList();
+            IdCb.ItemsSource = App.db.Exam.OrderBy(x=>x.Id).ToList();
             IdCb.DisplayMemberPath = "Id";
             StudentCb.ItemsSource = App.db.Students.ToList();
             StudentCb.DisplayMemberPath = "Surname";
-            IEnumerable<Exam> exams = App.db.Exam;
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)

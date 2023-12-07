@@ -30,7 +30,15 @@ namespace TrainingPracticeWPF.Components
             AudienceTb.Text = exam.Audience.ToString();
             ObjectTb.Text = exam.Discipline.Title;
             StudentTb.Text = exam.Student.Surname;
-            EducatorTb.Text = exam.Employee.Surname;
+            if(exam.Employee != null)
+            {
+                EducatorTb.Text = exam.Employee.Surname;
+            }
+            else
+            {
+                EducatorTb.Text = "-";
+            }
+            
             ScoreTb.Text = exam.Appraisal.ToString();
         }
 

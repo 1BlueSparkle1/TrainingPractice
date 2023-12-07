@@ -48,7 +48,7 @@
                 </WrapPanel>
             </ScrollViewer>
         </StackPanel>
-        <Button Grid.Row="1">
+        <Button Grid.Row="1" Name="AddBtn" Click="AddBtn_Click">
             Добавить
         </Button>
     </Grid>

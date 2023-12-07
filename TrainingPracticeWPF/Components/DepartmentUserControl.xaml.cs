@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TrainingPracticeWPF.MyPages;
 
 namespace TrainingPracticeWPF.Components
 {
@@ -20,7 +21,7 @@ namespace TrainingPracticeWPF.Components
     /// </summary>
     public partial class DepartmentUserControl : UserControl
     {
-        public static Department department;
+        public Department department;
         public DepartmentUserControl(Department _department)
         {
             InitializeComponent();
@@ -37,6 +38,11 @@ namespace TrainingPracticeWPF.Components
                 }
             }
 
+        }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            navigation.NextPage(new PageComponent(new EditDepartmentPage(department, 0), "Изменение"));
         }
     }
 }
