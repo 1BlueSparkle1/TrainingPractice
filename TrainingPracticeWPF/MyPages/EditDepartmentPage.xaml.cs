@@ -78,15 +78,12 @@ namespace TrainingPracticeWPF.MyPages
                     {
                         if (ClipherTb.Text == depart.Clipher)
                         {
+                            Variable = 5;
                             MessageBox.Show("Кафедра с таким шифром уже существует.");
                             break;
                         }
-                        else
-                        {
-                            Variable = 5;
-                        }
                     }
-                    if (Variable == 5)
+                    if (Variable != 5)
                     {
                         App.db.Department.Add(department);
                         App.db.SaveChanges();

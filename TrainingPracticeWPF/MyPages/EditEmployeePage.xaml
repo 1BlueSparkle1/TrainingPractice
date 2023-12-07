@@ -21,7 +21,7 @@
                 </StackPanel>
                 <StackPanel>
                     <TextBlock FontWeight="Bold">Кафедра</TextBlock>
-                    <TextBox Text="{Binding Department.Title}" Name="DepartmentTb"></TextBox>
+                    <ComboBox Name="DepartmentCb"></ComboBox>
                 </StackPanel>
                 <StackPanel>
                     <TextBlock FontWeight="Bold">Фамилия</TextBlock>
@@ -43,7 +43,7 @@
                 </StackPanel>
                 <StackPanel  Name="ChiefSp">
                     <TextBlock FontWeight="Bold">Шеф</TextBlock>
-                    <TextBox Text="{Binding Chief}" Name="ChiefTb"></TextBox>
+                    <ComboBox Name="ChiefCb"></ComboBox>
                 </StackPanel>
                 <StackPanel  Name="PasswordSp">
                     <TextBlock FontWeight="Bold">Пароль</TextBlock>
@@ -57,7 +57,7 @@
                 </StackPanel>
                 <StackPanel Name="SpecialtySp">
                     <TextBlock FontWeight="Bold">Специальность</TextBlock>
-                    <TextBox Name="SpecialtyTb"></TextBox>
+                    <ComboBox Name="SpecialtyCb"></ComboBox>
                 </StackPanel>
                 <StackPanel  Name="TitleSp">
                     <TextBlock FontWeight="Bold">Звание</TextBlock>

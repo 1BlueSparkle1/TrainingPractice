@@ -27,8 +27,22 @@ namespace TrainingPracticeWPF.MyPages
         {
             InitializeComponent();
             employee = _employee;
-
+            this.DataContext = employee;
             Variable = x;
+
+            ChiefCb.ItemsSource = App.db.Employee.ToList();
+            ChiefCb.DisplayMemberPath = "Surname";
+            DepartmentCb.ItemsSource = App.db.Department.ToList();
+            DepartmentCb.DisplayMemberPath = "Title";
+            SpecialtyCb.ItemsSource = App.db.Specialty.ToList();
+            SpecialtyCb.DisplayMemberPath = "Direction";
+
+            if (Variable == 0)
+            {
+                DepartmentCb.Text = employee.Department.Title;
+            }
+            
+
             if (NumberTb.Text == employee.TabNumber.ToString())
             {
                 NumberTb.IsReadOnly = true;
@@ -49,10 +63,11 @@ namespace TrainingPracticeWPF.MyPages
                 {
                     if (employee1.TabNumber == employee.Chief)
                     {
-                        ChiefTb.Text = employee1.Surname;
+                        ChiefCb.Text = employee1.Surname;
                     }
                 }
             }
+
             DegreeSp.Visibility = Visibility.Collapsed;
             SpecialtySp.Visibility = Visibility.Collapsed;
             TitleSp.Visibility = Visibility.Collapsed;
@@ -105,14 +120,14 @@ namespace TrainingPracticeWPF.MyPages
                 {
                     if (engineer.TabNumberEmployee == employee.TabNumber)
                     {
-                        SpecialtyTb.Text = engineer.Specialty;
+                        SpecialtyCb.Text = engineer.Specialty;
                         LoginTb.Text = engineer.Login;
                         PasswordTb.Text = engineer.Password;
                     }
                 }
 
             }
-            this.DataContext = employee;
+            
 
         }
 
@@ -157,7 +172,7 @@ namespace TrainingPracticeWPF.MyPages
                         {
                             engineer.Login = LoginTb.Text;
                             engineer.Password = PasswordTb.Text;
-                            engineer.Specialty = SpecialtyTb.Text;
+                            engineer.Specialty = SpecialtyCb.Text;
                         }
                     }
 
@@ -169,10 +184,35 @@ namespace TrainingPracticeWPF.MyPages
             else if (Variable == 1)
             {
                 Employee employeeSave;
-                if (NumberTb.Text != employee.TabNumber.ToString())
+                IEnumerable<Employee> employees1 = App.db.Employee;
+                foreach(var emp in employees1)
+                {
+                    if (NumberTb.Text == emp.TabNumber.ToString())
+                    {
+                        Variable = 5; 
+                        break;
+                    }
+                }
+                if (Variable != 5)
                 {
                     employeeSave = employee;
                     employeeSave.TabNumber = int.Parse(NumberTb.Text);
+                    IEnumerable<Employee> ems = App.db.Employee;
+                    foreach (var em in ems)
+                    {
+                        if (ChiefCb.Text == em.Surname.ToString())
+                        {
+                            employeeSave.Chief = em.TabNumber;
+                        }
+                    }
+                    IEnumerable<Department> depts = App.db.Department;
+                    foreach (var dept in depts)
+                    {
+                        if (DepartmentCb.Text == dept.Title)
+                        {
+                            employeeSave.ClipherDepartment = dept.Clipher;
+                        }
+                    }
                     if (employee.Position == "зав. кафедрой")
                     {
                         HeadDepartment headDepartment = new HeadDepartment();
@@ -197,11 +237,14 @@ namespace TrainingPracticeWPF.MyPages
                         Engineer engineerSave = new Engineer();
                         engineerSave.Login = LoginTb.Text;
                         engineerSave.Password = PasswordTb.Text;
-                        engineerSave.Specialty = SpecialtyTb.Text;
+                        engineerSave.Specialty = SpecialtyCb.Text;
                         engineerSave.TabNumberEmployee= int.Parse(NumberTb.Text);
                         App.db.Engineer.Add(engineerSave);
                     }
                     App.db.Employee.Add(employeeSave);
+                    App.db.SaveChanges();
+                    MessageBox.Show("Сохранено");
+                    navigation.BackPage();
                 }
                 else
                 {
@@ -274,7 +317,7 @@ namespace TrainingPracticeWPF.MyPages
                         {
                             if (engineer.TabNumberEmployee == employee.TabNumber)
                             {
-                                SpecialtyTb.Text = engineer.Specialty;
+                                SpecialtyCb.Text = engineer.Specialty;
                                 LoginTb.Text = engineer.Login;
                                 PasswordTb.Text = engineer.Password;
                             }
